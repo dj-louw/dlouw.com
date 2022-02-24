@@ -92,10 +92,20 @@
         }
       }
       
-        /* #content div
+      section
         {
           break-inside: avoid;
-        } */
+        }
+
+      a
+      {
+        color: black;
+      }
+
+      #printhack
+      {
+        display:none;
+      }
 
       @media print
       {
@@ -104,12 +114,23 @@
           width: 100%;
           font-size:.75em
         }
-        /* #content div
+        section
         {
           break-inside: avoid;
-        } */
+        }
+        #printhack
+        {
+          display: block;
+        }
+        .printhide
+        {
+          display: none;
+        }
+        a
+        {
+          text-decoration: none;
+        }
       }
-
     </style>
 
 
@@ -118,13 +139,13 @@
     <div id="cv">
       
       <header id="header">
-        <h1>Daniël J Louw</h1>
+        <h1>Daniël J. Louw</h1>
         <p>
           <a target='_blank' href="tel:+27826190146">+27 82 619 0146</a>  |
           <a target='_blank' href="mailto:daniel@dline.co.za">daniel@dline.co.za</a>  |
-          <a target='_blank' href="https://dlouw.com">dlouw.com</a>  |
-          <a target='_blank' href="https://www.linkedin.com/in/daniel-louw-a19aa624/">LinkedIn</a>  |
-          <a href="https://github.com/dj-louw">GitHub</a>  |  
+          <a target='_blank' href="https://www.dlouw.com">dlouw.com</a>  |
+          <span class="printhide" ><a target='_blank' href="https://www.linkedin.com/in/daniel-louw-a19aa624/">LinkedIn</a>  |  </span>
+          <span class="printhide" ><a class="printhide" href="https://github.com/dj-louw">GitHub</a>  |  </span>
           <a target='_blank' href="https://goo.gl/maps/WfFxsbn2cNshZz7k9">Pretoria, South Africa</a>
         </p>
         <b>
@@ -243,7 +264,10 @@
               <li>Acted as Machine Specialist for: Telescopic Boom Loaders, TLBs, Face Shovels and Excavators</li>
             </ul>
           </div>
-           
+          
+          <!-- I am so, so sorry :( -->
+          <div id="printhack"><br><br><br><br><br><br><br><br><br><br></div>
+
           <div>
             <h3>Software Engineer</h3> @ <a target='_blank' href="https://5dt.com/">Fifth Dimension Technologies</a> (2013 - 2015)<br>
             <ul>
@@ -308,6 +332,8 @@
           <em>“If you think your users are idiots, only idiots will use it.”</em> <br>
           — Linus Torvalds
         </p>
+
+        <span id="print" class="printhide"><a target='_blank' href="./Daniel J Louw CV - printer friendly.pdf">Get a printable version of this CV</a></span>
       </footer>
 
     </div> <!-- Body  -->
